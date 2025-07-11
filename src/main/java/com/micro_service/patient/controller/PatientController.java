@@ -1,6 +1,6 @@
 package com.micro_service.patient.controller;
 
-import com.micro_service.patient.modal.Patient;
+import com.micro_service.patient.dto.PatientResponseDto;
 import com.micro_service.patient.service.PatientService;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -18,7 +18,7 @@ public class PatientController {
     }
 
     @GetMapping
-    public List<Patient> getPatients(){
+    public List<PatientResponseDto> getPatients(){
         return patientService.getPatients();
     }
 
