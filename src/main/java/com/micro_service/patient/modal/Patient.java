@@ -23,7 +23,7 @@ public class Patient {
     private String address;
     @NotNull
     private LocalDate dateOfBirth;
-
+    @NotNull
     private LocalDate registeredDate;
 
     public UUID getId() {

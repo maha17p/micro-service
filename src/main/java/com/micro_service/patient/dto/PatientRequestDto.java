@@ -1,5 +1,6 @@
 package com.micro_service.patient.dto;
 
+import com.micro_service.patient.dto.validators.CreatePatientValidationGroup;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
@@ -24,8 +25,19 @@ public class PatientRequestDto {
     @NotNull(message = "Date of birth is required")
     private LocalDate dateOfBirth;
 
+    @NotNull(message = "Registered date is required", groups = CreatePatientValidationGroup.class)
+    private LocalDate registeredDate;
+
     public String getName() {
         return name;
+    }
+
+    public LocalDate getRegisteredDate() {
+        return registeredDate;
+    }
+
+    public void setRegisteredDate(LocalDate registeredDate) {
+        this.registeredDate = registeredDate;
     }
 
     public void setName(String name) {
